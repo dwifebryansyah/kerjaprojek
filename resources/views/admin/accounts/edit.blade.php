@@ -133,7 +133,7 @@
                         <label class="form-control-label">
                             Password
                         </label>
-                        <input type="password" name="password" class="form-control form-control-alternative" placeholder="Password">
+                        <input type="password" name="password" class="form-control form-control-alternative" value="{{ $admin->password }}">
                     </div>
                 </div>
                 <div class="col-6 p-2">
@@ -141,7 +141,7 @@
                         <label class="form-control-label">
                             Ulangi Password
                         </label>
-                        <input type="password" name="password_confirmation" class="form-control form-control-alternative" placeholder="Ulangin Password">
+                        <input type="password" name="password_confirmation" class="form-control form-control-alternative" value="{{ $admin->password }}">
                     </div>
                 </div>
                 <div class="col-6 p-2">

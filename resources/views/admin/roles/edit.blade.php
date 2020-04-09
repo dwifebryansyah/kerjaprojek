@@ -93,7 +93,7 @@
                             </li>
                             <li class="breadcrumb-item">
                                 <a href="{{ route('roles.index') }}">
-                                    Categories
+                                    Role
                                 </a>
                             </li>
                             <li class="breadcrumb-item active" aria-current="page">
