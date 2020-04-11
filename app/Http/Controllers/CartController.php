@@ -112,12 +112,12 @@ class CartController extends Controller
     {
 
 
-        $sisas = Product::find($request->pesen[2]['id']);
-        if ($sisas->stok <= $request->pesen[2]['qty']) {
+        // $sisas = Product::find($request->pesen[2]['id']);
+        // if ($sisas->stok <= $request->pesen[2]['qty']) {
 
-            return redirect()->route('carts.index')->with('alert', 'Silahkan Approve ke Admin');
+        //     return redirect()->route('carts.index')->with('alert', 'Silahkan Approve ke Admin');
 
-        }else{
+        // }else{
 
             foreach ($request->pesen as $val) {
 
@@ -155,7 +155,7 @@ class CartController extends Controller
         ]);
         
         return redirect()->route('products.index');
-        }
+        // }
     }
 
     /**
