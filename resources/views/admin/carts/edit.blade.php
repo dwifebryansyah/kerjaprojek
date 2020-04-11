@@ -86,9 +86,18 @@
                             Pesen Berapa Produk
                         </label>
                         <input type="hidden" name="pesen[{{ $product->id }}][id]" value="{{ $product->id }}" class="form-control form-control-alternative">
-                        <input type="text" autofocus name="pesen[{{ $product->id }}][qty]" value="{{ $qty }}" class="form-control form-control-alternative">
+                        <input type="text" onkeypress="return hanyaAngka(event)" required="" autofocus name="pesen[{{ $product->id }}][qty]" value="{{ $qty }}" class="form-control form-control-alternative">
                     </div>
                 </div>
+                <script>
+                    function hanyaAngka(evt) {
+                    var charCode = (evt.which) ? evt.which : event.keyCode
+                    if (charCode > 31 && (charCode < 48 || charCode > 57))
+            
+                        return false;
+                    return true;
+                    }
+                </script>
                 <div class="col-md-8"></div>
                 <div class="col text-right">
                     <input type="hidden" name="role" value="{{ $session['role_id'] }}">

@@ -64,7 +64,7 @@
                         <label class="form-control-label">
                             Satuan
                         </label>
-                        <input type="text" autofocus name="name" class="form-control form-control-alternative" placeholder="Name Satuan">
+                        <input type="text" required="" autofocus name="name" class="form-control form-control-alternative" placeholder="Name Satuan">
                     </div>
                 </div>
                 <div class="col-md-12">
@@ -72,7 +72,7 @@
                         <label class="form-control-label">
                             Kategori
                         </label>
-                        <select name="category_id" class="form-control form-control-alternative">
+                        <select name="category_id" required="" class="form-control form-control-alternative">
                             <option value="">Pilih Kategori</option>
                             @foreach ($categories as $c)
                             <option value="{{ $c->id }}">{{ $c->name }}</option>

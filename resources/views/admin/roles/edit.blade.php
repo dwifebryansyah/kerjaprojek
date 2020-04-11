@@ -117,7 +117,7 @@
                         <label class="form-control-label">
                             Name Role
                         </label>
-                        <input type="text" name="name" value="{{ $role->name }}" class="form-control form-control-alternative" placeholder="Name Role">
+                        <input type="text" required="" name="name" value="{{ $role->name }}" class="form-control form-control-alternative" placeholder="Name Role">
                     </div>
                 </div>
                 <div class="col-md-8"></div>

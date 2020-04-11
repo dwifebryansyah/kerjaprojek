@@ -66,7 +66,7 @@
                         <label class="form-control-label">
                             Name
                         </label>
-                        <input type="text" name="name" class="form-control form-control-alternative" placeholder="Name">
+                        <input type="text" name="name" required="" class="form-control form-control-alternative" placeholder="Name">
                     </div>
                 </div>
                 <div class="col-6 p-2">
@@ -74,7 +74,7 @@
                         <label class="form-control-label">
                             Email
                         </label>
-                        <input type="email" name="email" class="form-control form-control-alternative" placeholder="Email">
+                        <input type="email" name="email" required="" class="form-control form-control-alternative" placeholder="Email">
                     </div>
                 </div>
                 <div class="col-6 p-2">
@@ -82,7 +82,7 @@
                         <label class="form-control-label">
                             Password
                         </label>
-                        <input type="password" name="password" class="form-control form-control-alternative" placeholder="Password">
+                        <input type="password" required="" name="password" class="form-control form-control-alternative" placeholder="Password">
                     </div>
                 </div>
                 <div class="col-6 p-2">
@@ -90,7 +90,7 @@
                         <label class="form-control-label">
                             Ulangi Password
                         </label>
-                        <input type="password" name="password_confirmation" class="form-control form-control-alternative" placeholder="Ulangin Password">
+                        <input type="password" required="" name="password_confirmation" class="form-control form-control-alternative" placeholder="Ulangin Password">
                     </div>
                 </div>
                 <div class="col-6 p-2">
@@ -98,7 +98,7 @@
                         <label class="form-control-label">
                             Hak Akses
                         </label>
-                        <select name="role_id" class="form-control form-control-alternative">
+                        <select name="role_id" required="" class="form-control form-control-alternative">
                             <option value="">Pilih Hak Akses</option>
                             @foreach ($roles as $r)
                             <option value="{{ $r->id }}">{{ $r->name }}</option>

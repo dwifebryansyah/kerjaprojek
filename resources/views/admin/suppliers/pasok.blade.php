@@ -81,7 +81,7 @@
                         <label class="form-control-label">
                             Nama Barang
                         </label>
-                        <input type="text" name="name" disabled value="{{ ucwords($p['name'].' - '.$p['unit'].' - '.$p['category']) }}" class="form-control form-control-alternative">
+                        <input type="text" name="name" required="" disabled value="{{ ucwords($p['name'].' - '.$p['unit'].' - '.$p['category']) }}" class="form-control form-control-alternative">
                     </div>
                 </div>
                 <div class="col-md-2 p-1">
@@ -89,7 +89,7 @@
                         <label class="form-control-label">
                             Sisa Stok
                         </label>
-                        <input type="text" name="name" disabled value="{{ $p['stok'] }}" class="form-control form-control-alternative">
+                        <input type="text" required="" name="name" disabled value="{{ $p['stok'] }}" class="form-control form-control-alternative">
                     </div>
                 </div>
                 <div class="col-md-3 p-1">
@@ -97,7 +97,7 @@
                         <label class="form-control-label">
                             Harga Beli
                         </label>
-                        <input type="text" name="pasok[{{ $p['id'] }}][harga_beli]" value="{{ $p['harga'] }}" class="form-control form-control-alternative">
+                        <input type="text" onkeypress="return hanyaAngka(event)" required="" name="pasok[{{ $p['id'] }}][harga_beli]" value="{{ $p['harga'] }}" class="form-control form-control-alternative">
                     </div>
                 </div>
                  <div class="col-md-3 p-1">
@@ -106,10 +106,19 @@
                             Jumlah
                         </label>
                         <input type="hidden" name="pasok[{{ $p['id'] }}][id]" value="{{ $p['id'] }}" class="form-control form-control-alternative">
-                        <input type="text" name="pasok[{{ $p['id'] }}][qty]" autofocus class="form-control form-control-alternative">
+                        <input type="text" onkeypress="return hanyaAngka(event)" required="" name="pasok[{{ $p['id'] }}][qty]" autofocus class="form-control form-control-alternative">
                     </div>
                 </div>
                 @endforeach
+                <script>
+                    function hanyaAngka(evt) {
+                    var charCode = (evt.which) ? evt.which : event.keyCode
+                    if (charCode > 31 && (charCode < 48 || charCode > 57))
+            
+                        return false;
+                    return true;
+                    }
+                </script>
                 <div class="col text-right">
                     <input type="hidden" name="user" value="{{ $session['user_id'] }}">
                     <input type="hidden" name="activity" value="memasok">

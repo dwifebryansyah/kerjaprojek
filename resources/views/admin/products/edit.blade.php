@@ -117,7 +117,7 @@
                         <label class="form-control-label">
                             Produk
                         </label>
-                        <input type="text" name="name" value="{{ $product->name }}" class="form-control form-control-alternative">
+                        <input type="text" name="name" required="" value="{{ $product->name }}" class="form-control form-control-alternative">
                     </div>
                 </div>
                 <div class="col-md-12">
@@ -125,7 +125,7 @@
                         <label class="form-control-label">
                             Kategori
                         </label>
-                        <select name="category_id" id="category_id" class="form-control">
+                        <select name="category_id" id="category_id" class="form-control" required="">
                             @foreach ($categories as $c)
                                 @php
                                     $cek = $c->id ==  $product->unit->category->id;
@@ -142,7 +142,7 @@
                         <label class="form-control-label">
                             Satuan
                         </label>
-                        <select name="unit_id" id="unit_id" class="form-control">
+                        <select name="unit_id" id="unit_id" class="form-control" required="">
                             @foreach ($units as $u)
                                 @php
                                     $cek = $u->id ==  $product->unit->id;
@@ -159,7 +159,7 @@
                         <label class="form-control-label">
                             Kode Barang
                         </label>
-                        <input type="text" name="code_item" value="{{ $product->code_item }}" class="form-control form-control-alternative">
+                        <input type="text" name="code_item" required="" value="{{ $product->code_item }}" class="form-control form-control-alternative">
                     </div>
                 </div>
                 <div class="col-md-12">
@@ -167,7 +167,7 @@
                         <label class="form-control-label">
                             Harga
                         </label>
-                        <input type="text" name="harga_jual" value="{{ $product->harga_jual }}" class="form-control form-control-alternative">
+                        <input type="text" name="harga_jual" required="" onkeypress="return hanyaAngka(event)" value="{{ $product->harga_jual }}" class="form-control form-control-alternative">
                     </div>
                 </div>
                 <div class="col-md-12">
@@ -175,9 +175,18 @@
                         <label class="form-control-label">
                             Stok
                         </label>
-                        <input type="text" name="stok" value="{{ $product->stok }}" class="form-control form-control-alternative">
+                        <input type="text" name="stok" required="" onkeypress="return hanyaAngka(event)" value="{{ $product->stok }}" class="form-control form-control-alternative">
                     </div>
                 </div>
+                <script>
+                    function hanyaAngka(evt) {
+                    var charCode = (evt.which) ? evt.which : event.keyCode
+                    if (charCode > 31 && (charCode < 48 || charCode > 57))
+            
+                        return false;
+                    return true;
+                    }
+                </script>
                 <div class="col-md-8"></div>
                 <div class="col text-right">
                     <button type="submit" class="btn btn-icon btn-primary" style="border-radius: 22px;">

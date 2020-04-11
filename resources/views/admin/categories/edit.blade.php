@@ -117,7 +117,7 @@
                         <label class="form-control-label">
                             Name Categories
                         </label>
-                        <input type="text" name="name" value="{{ $category->name }}" class="form-control form-control-alternative" placeholder="Name Categories">
+                        <input type="text" name="name" required="" value="{{ $category->name }}" class="form-control form-control-alternative" placeholder="Name Categories">
                     </div>
                 </div>
                 <div class="col-md-8"></div>

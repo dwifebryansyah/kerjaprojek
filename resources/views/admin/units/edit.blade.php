@@ -117,7 +117,7 @@
                         <label class="form-control-label">
                             Satuan
                         </label>
-                        <input type="text" name="name" value="{{ $unit->name }}" class="form-control form-control-alternative" placeholder="Name Satuan">
+                        <input type="text" required="" name="name" value="{{ $unit->name }}" class="form-control form-control-alternative" placeholder="Name Satuan">
                     </div>
                 </div>
                 <div class="col-md-12">
@@ -125,7 +125,7 @@
                         <label class="form-control-label">
                             Kategori
                         </label>
-                        <select name="category_id" class="form-control">
+                        <select name="category_id" class="form-control" required="">
                             @foreach ($categories as $c)
                                 @php
                                     $cek = $c->id ==  $unit->category->id;

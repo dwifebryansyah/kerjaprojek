@@ -66,7 +66,7 @@
                         <label class="form-control-label">
                             Produk
                         </label>
-                        <input type="text" autofocus name="name" class="form-control form-control-alternative" placeholder="Masukan Produk">
+                        <input type="text" required="" autofocus name="name" class="form-control form-control-alternative" placeholder="Masukan Produk">
                     </div>
                 </div>
                 <div class="col-md-12">
@@ -74,7 +74,7 @@
                         <label class="form-control-label">
                             Kategori
                         </label>
-                        <select name="category_id" id="category_id" class="form-control form-control-alternative">
+                        <select name="category_id" required="" id="category_id" class="form-control form-control-alternative">
                             <option value="">Pilih Kategori</option>
                             @foreach ($categories as $c)
                             <option value="{{ $c->id }}">{{ $c->name }}</option>
@@ -88,7 +88,7 @@
                         <label class="form-control-label">
                             Satuan
                         </label>
-                        <select name="unit_id" id="unit_id" class="form-control form-control-alternative">
+                        <select name="unit_id" required="" id="unit_id" class="form-control form-control-alternative">
                             <option value="">Pilih Satuan</option>
                         </select>
                     </div>
@@ -104,7 +104,7 @@
                                     Rp.
                                 </span>
                             </div>
-                            <input type="text" name="harga_beli" class="form-control form-control-alternative" placeholder="Masukan Harga Jual">
+                            <input type="text" required="" onkeypress="return hanyaAngka(event)" name="harga_beli" class="form-control form-control-alternative" placeholder="Masukan Harga Jual">
                         </div>
                     </div> 
                 </div>
@@ -119,7 +119,7 @@
                                     Rp.
                                 </span>
                             </div>
-                            <input type="text" name="harga_jual" class="form-control form-control-alternative" placeholder="Masukan Harga Jual">
+                            <input type="text" onkeypress="return hanyaAngka(event)" required=""  name="harga_jual" class="form-control form-control-alternative" placeholder="Masukan Harga Jual">
                         </div>            
                     </div>
                 </div>
@@ -128,9 +128,18 @@
                         <label class="form-control-label">
                             Stok
                         </label>
-                        <input type="text" name="stok" class="form-control form-control-alternative" placeholder="Masukan Stok">
+                        <input type="text" required="" onkeypress="return hanyaAngka(event)" name="stok" class="form-control form-control-alternative" placeholder="Masukan Stok">
                     </div>
                 </div>
+                <script>
+                    function hanyaAngka(evt) {
+                    var charCode = (evt.which) ? evt.which : event.keyCode
+                    if (charCode > 31 && (charCode < 48 || charCode > 57))
+            
+                        return false;
+                    return true;
+                    }
+                </script>
                 <div class="col-md-8"></div>
                 <div class="col text-right">
                     <button type="submit" class="btn btn-icon btn-warning" style="border-radius: 22px;">

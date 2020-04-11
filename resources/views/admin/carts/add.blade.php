@@ -98,10 +98,19 @@
                             Jumlah
                         </label>
                         <input type="hidden" name="pesen[{{ $p['id'] }}][id]" value="{{ $p['id'] }}" class="form-control form-control-alternative">
-                        <input type="text" name="pesen[{{ $p['id'] }}][qty]" autofocus class="form-control form-control-alternative">
+                        <input type="text" require="" onkeypress="return hanyaAngka(event)" name="pesen[{{ $p['id'] }}][qty]" autofocus class="form-control form-control-alternative">
                     </div>
                 </div>
                 @endforeach
+                     <script>
+                        function hanyaAngka(evt) {
+                        var charCode = (evt.which) ? evt.which : event.keyCode
+                        if (charCode > 31 && (charCode < 48 || charCode > 57))
+                
+                            return false;
+                        return true;
+                        }
+                    </script>
                 <div class="col text-right">
                     <input type="hidden" name="user" value="{{ $session['user_id'] }}">
                     <input type="hidden" name="activity" value="memesan">

@@ -13,19 +13,19 @@
                         @csrf
                         <div class="form-group">
                             <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                            <input type="text" autofocus name="name" placeholder="Your Name"/>
+                            <input type="text" autofocus name="name" placeholder="Your Name" required=""/>
                         </div>
                         <div class="form-group">
                             <label for="email"><i class="zmdi zmdi-email"></i></label>
-                            <input type="email" name="email" placeholder="Your Email"/>
+                            <input type="email" name="email" placeholder="Your Email" required=""/>
                         </div>
                         <div class="form-group">
                             <label for="password"><i class="zmdi zmdi-lock"></i></label>
-                            <input type="password" name="password" placeholder="Password"/>
+                            <input type="password" name="password" placeholder="Password" required=""/>
                         </div>
                         <div class="form-group">
                             <label for="role_id"><i class="zmdi zmdi-accounts"></i></label>
-                            <select name="role_id" class="form-control" style="padding: 6px 30px; border: none; border-bottom: 1px solid #999; font-size: 13px; color:black;">
+                            <select name="role_id" class="form-control" style="padding: 6px 30px; border: none; border-bottom: 1px solid #999; font-size: 13px; color:black;" required="">
                                 <option value="">Pilih Role</option>
                                 @foreach ($roles as $r)
                                 <option value="{{ $r->id }}">{{ $r->name }}</option>

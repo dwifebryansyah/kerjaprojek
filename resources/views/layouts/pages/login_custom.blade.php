@@ -25,11 +25,11 @@
                         @csrf
                         <div class="form-group">
                             <label><i class="zmdi zmdi-email"></i></label>
-                            <input type="email" name="email" autofocus placeholder="Your Email"/>
+                            <input type="email" name="email" autofocus placeholder="Your Email" required=""/>
                         </div>
                         <div class="form-group">
                             <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
-                            <input type="password" name="password" placeholder="Password"/>
+                            <input type="password" name="password" placeholder="Password" required=""/>
                         </div>
                         {{-- <div class="form-group">
                             <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />

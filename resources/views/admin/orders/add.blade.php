@@ -155,14 +155,22 @@
                                                     Rp.
                                                 </span>
                                             </div>
-                                            <input type="text" required autocomplete="off" name="duit" placeholder="Uang Bayar" class="form-control form-control-alternative">
+                                            <input type="text" onkeypress="return hanyaAngka(event)" require="" required autocomplete="off" name="duit" placeholder="Uang Bayar" class="form-control form-control-alternative">
                                         </div>      
                                     </div>
                                 </strong>
                             </h2>
                         </div>
                     </div>
-
+                    <script>
+                        function hanyaAngka(evt) {
+                        var charCode = (evt.which) ? evt.which : event.keyCode
+                        if (charCode > 31 && (charCode < 48 || charCode > 57))
+                
+                            return false;
+                        return true;
+                        }
+                    </script>
                     <div>
                         <input type="hidden" name="user" value="{{ $session['user_id'] }}">
                         <input type="hidden" name="activity" value="membayar">

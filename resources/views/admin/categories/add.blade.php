@@ -66,7 +66,7 @@
                         <label class="form-control-label">
                             Name Kategori
                         </label>
-                        <input type="text" autofocus name="name" class="form-control form-control-alternative" placeholder="Name Categories">
+                        <input type="text" autofocus name="name" required="" class="form-control form-control-alternative" placeholder="Name Categories">
                     </div>
                 </div>
                 <div class="col-md-8"></div>

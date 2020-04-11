@@ -117,7 +117,7 @@
                         <label class="form-control-label">
                             Name
                         </label>
-                        <input type="text" name="name" value="{{ $admin->name }}" class="form-control form-control-alternative" placeholder="Name">
+                        <input type="text" required="" name="name" value="{{ $admin->name }}" class="form-control form-control-alternative" placeholder="Name">
                     </div>
                 </div>
                 <div class="col-6 p-2">
@@ -125,7 +125,7 @@
                         <label class="form-control-label">
                             Email
                         </label>
-                        <input type="email" name="email" value="{{ $admin->email }}" class="form-control form-control-alternative" placeholder="Email">
+                        <input type="email" required="" name="email" value="{{ $admin->email }}" class="form-control form-control-alternative" placeholder="Email">
                     </div>
                 </div>
                 <div class="col-6 p-2">
@@ -133,7 +133,7 @@
                         <label class="form-control-label">
                             Password
                         </label>
-                        <input type="password" name="password" class="form-control form-control-alternative" value="{{ $admin->password }}">
+                        <input type="password" required="" name="password" class="form-control form-control-alternative" value="{{ $admin->password }}">
                     </div>
                 </div>
                 <div class="col-6 p-2">
@@ -141,7 +141,7 @@
                         <label class="form-control-label">
                             Ulangi Password
                         </label>
-                        <input type="password" name="password_confirmation" class="form-control form-control-alternative" value="{{ $admin->password }}">
+                        <input type="password" required="" name="password_confirmation" class="form-control form-control-alternative" value="{{ $admin->password }}">
                     </div>
                 </div>
                 <div class="col-6 p-2">
@@ -149,7 +149,7 @@
                         <label class="form-control-label">
                             Status
                         </label>
-                        <select name="status" class="form-control form-control-alternative">
+                        <select name="status" required="" class="form-control form-control-alternative">
                             @if ($admin->status == 1)
                               <option value="1" selected>Accept</option>
                               <option value="0">Pending</option> 
@@ -166,7 +166,7 @@
                             Hak Akses
                         </label>
 
-                        <select name="role_id" class="form-control form-control-alternative">
+                        <select name="role_id" required="" class="form-control form-control-alternative">
                            @foreach ($roles as $r)
                                 @php
                                     $cek = $r->id ==  $admin->roles->first()->pivot->role_id;
